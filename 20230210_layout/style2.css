@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/* init */
+/* 선택자의 종류
+1. *{} : 전체요소 선택
+2. 태그명{} : 태그명(요소명)으로 선택
+3. #아이디명{} : 아이디를 가진 요소(단독)
+4. .클래스명{} : 클래스를 가진 요소(반복)
+우선순위[ * < tag(1) < class(10) < id(1000) < inline < !importent] */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+.clearfix:after{content: "";display: block;clear: both;}
+li{list-style: none;}
+/* 가상클래스 선택자[마우스의 움직임?]
+1. a:link : 링크 걸린 텍스트 선택 
+2. a:visited : 링크 방문을 했던 텍스트 선택
+3. a:hover : 링크 걸린 텍스트에 마우스를 올렸을 때 */
+a:link,a:visited{text-decoration: none; color: black;}
+
+/* header  */
+
+#hd{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: pink;
+}
+
+/* 텍스트 사이즈는 다 상속됨
+상속을 안하고 싶으면 initial 사용 */
+h1.logo{
+    background-color: skyblue;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;   
+}
+
+h1.logo a{
+    background-color: blue;
+    display: block;
+    /* text-align: initial; */
+}
+
+/* 자식 태그에 float 사용 시, 부모 태그에 clearfix 사용
+float : 블록 요소의 정렬 */
+.menu li{
+    /* background-color: darkolivegreen; */
+    width: 20%;
+    float: left;
+    /* border-right:2px solid black; */
+}
+/* .menu li:first-child{border-left:2px solid black} */
+/* .menu li:nth-child(2n){background-color: skyblue;} */
+.menu li a{
+    text-align: center;
+    display: block;
+    line-height: 50px;
+    /* border:1px solid black; */
+}
+
+.menu li:hover{background-color: blueviolet;}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset  */
+        *{margin: 0;padding: 0;}
+        li{list-style:none;}
+        .clearfix:after{content:"";display: block;clear: both;}
+
+        /* body  */
+        .menu{
+            margin: 0 auto;
+            height: 50px;
+            background-color: aquamarine;
+            float: left; width: 20%;text-align: center;
+            line-height: 50px;
+        }
+        .wrap{
+            width: 1000px;
+            margin: 0 auto;
+            background-color:skyblue;
+        }
+        .wrap li{
+            float: left;width: 20%;text-align: center;
+            line-height: 50px;
+        }
+        /* .wrap ul:after{content:"";display: block;clear: both;} */
+        .visual{
+            height: 500px;
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- div는 공간 분활할 때 사용  -->
+    <div class="menu clearfix">menu1</div>
+    <div class="menu clearfix">menu2</div>
+    <div class="menu clearfix">menu3</div>
+    <div class="menu clearfix">menu4</div>
+    <div class="menu clearfix">menu5</div>
+    <div class="wrap">
+        <!-- 목록을 표현하기 위해 사용, ul은 비순차적 목록 요소 / list의 의미를 가지고 있음-->
+        <ul class="clearfix">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+        </ul>
+    </div>
+    <div class="visual"></div>
+</body>
+</html>
