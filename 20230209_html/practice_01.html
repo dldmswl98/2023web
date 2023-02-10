@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .clearfix::after{
+            content: ""; display: block;clear: both;
+        }
+
+        .main_layout{
+            width: 1000px;
+            margin: 0 auto;
+            background-color: yellow;
+        }
+
+        .high_layout{
+            width: 95%;
+            background-color: aqua;
+            margin: 0 auto;
+        }
+        .logo1{
+            float: left;
+            background-color: beige;
+        }
+        .logo2{
+            float: right;
+            background-color: beige;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="main_layout">
+        <div class="high_layout clearfix">
+            <div class="logo1">logo</div>
+            <div class="logo2">menu</div>
+        </div>
+
+        <div class="middle_layout">
+            <div class="sub1">notice</div>
+            <div class="sub1">gallay</div>
+            <div class="sub1">popup</div>
+        </div>
+
+        <div class="law_layout">
+            <div class="sub2">logo</div>
+            <div class="sub2">copyright</div>
+            <div class="sub2">sns</div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
