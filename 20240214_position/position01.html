@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{
+            background: #333;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1{
+            background: red;
+            position: absolute;
+            z-index: 1;
+        }
+        .box2{
+            background: #0f0;
+            position: absolute;
+            left: 30px; top:30px;
+        }
+        .box3{
+            background: #ff0;
+        }
+        .box4{
+            background: #0ff;
+        }
+
+        .wrap{
+            width: 500px; height: 500px;
+            background: #eee;
+            margin: 0 auto;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="wrap">
+        <div class="box1">red</div>
+        <div class="box2">green</div>
+        <div class="box3">yellow</div>
+        <div class="box4">blue</div>
+    </header>   
+</body>
+</html>
+
+
+<!-- position : 웹 문서 안 요소들을 어떻게 배치할 지를 정하는 속성
+1. static : 요소를 문서 흐름에 맞추어 배치
+2. relative : 이전 요소(주로 부모 요소)에 자연스럽게 연결하여 위치를 지정
+3. absolute : 원하는 위치를 지정해 배치
+4. fixed : 지정한 위치에 고정하여 배치
+5. sticky :  위치에 따라서 동작방식이 달라짐. 요소가 임계점(scroll 박스 기준) 이전에   는 relative와 같이 동작. 그 이후에는 fixed와 같이 동작 -->
