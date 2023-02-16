@@ -1,0 +1,260 @@
+@charset "utf-8";
+html,body{height: 100%;}
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+}
+
+/* init  */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+li{list-style: none;}
+a:link,
+a:visited{
+    text-decoration: none;
+    color: #888;
+}
+.clearfix:after{content: "";display: block;clear:both;}
+
+.container{width: 980px;margin: 0 auto;}
+
+h3{font-size: 18px; letter-spacing: -1px;}
+
+/* header */
+.top{
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 10px;
+}
+.submenu{
+    float:right;
+    height: 26px;
+    /* background: skyblue; */
+}
+.submenu li{
+    float:left;
+}
+
+.submenu li a{
+    display: block;
+    /* height: 26px;
+    background: pink; */
+    font-size: 12px;
+    padding: 0 10px;
+    line-height: 26px;
+    position: relative;
+}
+
+.submenu li a:after{
+    content: ""; display: block; height: 5px; width: 5px; background: #888;
+    position: absolute;
+    right: 0;
+    top: 12px;
+    border-radius: 50%;
+}
+
+.submenu li:last-child a:after{display: none;} 
+
+h1.logo{
+    width: 200px;
+    height: 49px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+h1 img{
+    display: block;
+}
+
+
+#hd .bottom{
+    background: #1C5DA3;
+}
+
+#hd .menu li{
+    float:left; 
+    width: calc(100%/6);
+    border-right: 1px solid #336EAC;
+}
+
+#hd .menu li:first-child{border-left: 1px solid #336EAC;}
+
+#hd .menu li a{
+    display: block;
+    height: 44px; 
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    line-height: 44px;
+    font-weight: bold;
+    letter-spacing: -0.8px;
+}
+
+
+/* visual */
+.visual{
+    /* background-color: #1B335F;
+    background-image: url(../img/visual_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    간략하게▼*/
+
+    background: #213969 url(../img/visual_bg.jpg) no-repeat center;
+}
+
+.vWrap{position: relative;height: 400px; overflow: hidden;}
+.vWrap img{position: absolute;}
+.vWrap .img1{
+    left:0; top:50%;
+    margin-top: -123px;
+}
+.vWrap .img2{
+    right: 0;
+    top: 20px;
+}
+
+/* banner */
+.bWrapper{
+    background: #eee;
+    margin-bottom: 50px;
+}
+
+.bWrap li{
+    width: calc(100%/5);
+    /* background: #7C99B9; */
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+}
+
+.bWrap li img{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.bWrap h3{
+    margin-bottom: 7px;
+}
+
+.bWrap li:nth-child(1){background-color: #7C99B9;}
+.bWrap li:nth-child(2){background-color: #4F74A1;}
+.bWrap li:nth-child(3){background-color: #4B8CE0;}
+.bWrap li:nth-child(4){background-color: #3DB5F3;}
+.bWrap li:nth-child(5){background-color: #95C8FF;}
+
+
+/* job */
+.jobWrap div.jobItem{
+    float: left;
+    width: calc((980px - 50px)/3);
+    margin-right: 25px;
+    margin-bottom: 30px;
+}
+
+.jobWrap div.jobItem:last-child{
+    margin-right: 0;
+}
+
+.jobWrap img{
+    display: block;
+}
+
+.jobWrap .tWrap{
+    padding: 20px 15px;
+    border : 1px solid #ddd;
+    border-top: 0 none;
+}
+
+.jobWrap h3{
+    margin-bottom: 8px;
+}
+
+.jobWrap p{
+    color:  #888;
+}
+
+/* conItem */
+.con div.conItem{
+    float: left;
+    width: calc((980px - 50px)/3);
+    margin-right: 25px;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.con div.conItem:last-child{
+    margin-right: 0;
+}
+
+.con div.conItem .contextWrap{
+    position: relative;
+    padding: 20px 5px;
+    z-index: 1;
+}
+
+.con div.conItem img{
+    position: absolute;
+    top:0px;
+    right: -20px;
+    padding: 20px 5px;
+}
+
+.contextWrap h3{margin-bottom: 20px;}
+.contextWrap p{margin-bottom: 20px; color:#888888;}
+.contextWrap a{color: #4B8CE0;}
+
+.subft1{
+    height: 40px;
+    background: #4D4D4D;
+}
+
+
+.subft2{
+    height: 105px;
+    background: #5E5E5E;
+}
+
+/* footer */
+
+.submenu1 li{
+    float:left;
+    padding-left: 0;
+}
+
+.submenu1 li a{
+    display: block;
+    color: white;
+    font-size: 12px;
+    padding: 5px 20px;
+    line-height: 26px;
+    position: relative;
+    padding-left: 0;
+    
+}
+
+.submenu1 li a:after{
+    content: ""; display: block; height: 10px; width: 1px; background: #8F8F8F;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}
+
+.submenu1 li:last-child a:after{display: none;} 
+
+
+.subft2 h2{
+    color:white;
+    float: left;
+    margin-right: 30px;
+    margin-top: 40px;
+}
+
+.subft2 p{
+    color:#8F8F8F;
+    float: left;
+    padding: 10px 10px;    
+    line-height: 20px;
+}
+

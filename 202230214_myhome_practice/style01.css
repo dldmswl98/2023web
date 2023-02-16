@@ -86,3 +86,19 @@ h1 img{
     font-weight: bold;
     letter-spacing: -0.8px;
 }
+
+.visual{
+    background: #213969 url(./img/visual_bg.jpg) no-repeat center;
+}
+
+.subWrap{
+    position: relative;
+}
+
+.visual img{
+    position: absolute;
+}
+
+.visual .img2{
+    top: 0%;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        *{margin: 0;padding: 0;}
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap{
+            width: 300px;
+            height: 300px;
+            background: #F00;
+            position: relative;
+            /* position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -150px; */
+        }
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background: #000;
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1"></div>
+    </div>
+</body>
+</html>
+
+<!-- 화면 중앙에 넣는 방법
+1. 자식 자체를 가운데로 넣는 방법
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+2. 부모를 가운데로 넣는 방법 가운데로 이동하고 싶은 자식의 부모 태그 자체에 넣기]
+    isplay: flex;
+    justify-content: center;
+    align-items: center;
+
+3. 자식 태그에 position을 넣을 경우 부모 태그에 position:realative 추가해야 부모 태그 크기에서 가운데로 이동 가능
+-->
