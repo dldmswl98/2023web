@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a:link,
+        a:visited{
+            text-decoration: none;
+            color: white;
+        }
+        .clearfix:after{
+            content: "";display: block;clear: both;
+        }
+
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        
+        .tWrap{
+            width: 400px;
+            height: 300px;
+            background: burlywood;
+            text-align: center;
+            margin: 0 auto;
+            float:left;
+        }
+
+        .tWrap h1{
+            color: white;
+            line-height: 50px;
+        }
+
+        .tWrap #place{
+            font-size: 30px;
+        }
+
+        .menu .image{
+            float:left;
+            background: salmon;
+            width: 600px;
+            height: 300px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap container">
+        <div class="menu clearfix">
+            <div class="tWrap">
+                <h1>여행지 정보[나무위키]</h1>
+                <div id="place"></div>
+            </div> 
+            <div class="image">국기</div>
+        </div>
+    </div>
+    
+    <script>
+        const place_arr = ["필리핀", "베트남", "라오스", "미국", "중국", "일본"];
+        const place_link_arr = [
+            "https://namu.wiki/w/%ED%95%84%EB%A6%AC%ED%95%80",
+            "https://namu.wiki/w/%EB%B2%A0%ED%8A%B8%EB%82%A8",
+            "https://namu.wiki/w/%EB%9D%BC%EC%98%A4%EC%8A%A4",
+            "https://namu.wiki/w/%EB%AF%B8%EA%B5%AD",
+            "https://namu.wiki/w/%EC%A4%91%EA%B5%AD",
+            "https://namu.wiki/w/%EC%9D%BC%EB%B3%B8"
+
+        ];
+
+        let place = "";
+        for(let i=0;i<place_arr.length;i++){
+            place = place + "<a href='"+ place_link_arr[i] + "' target='_blank'>" +place_arr[i] + "</a><br>";
+
+        }
+
+
+        document.getElementById("place").innerHTML = place;
+
+        
+        
+    </script>
+</body>
+</html>

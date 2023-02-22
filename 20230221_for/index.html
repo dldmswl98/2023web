@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" onclick="location.href='http://www.naver.com'"></div>
+
+    <div id="day">일요일</div>
+    <div id="day1">일요일</div>
+
+    <script>
+        // const week = new Date().getDay();
+        // console.log(week);
+        
+        // let day = "";
+
+        // switch(week){
+        //     case 0:
+        //         day = "일요일";
+        //         break;
+        //     case 1:
+        //         day = "월요일";
+        //         break;
+        //     case 2:
+        //         day = "화요일";
+        //         break;
+        //     case 3:
+        //         day = "수요일";
+        //         break;
+        //     case 4:
+        //         day = "목요일";
+        //         break;
+        // }
+
+        // // document.write("오늘은 " + day + " 입니다.")
+        // document.getElementById("day").innerHTML = "오늘은 " +  day +" 입니다."
+
+        // // jquary 선언 후 사용 가능
+        // $("#day1").html(day)
+
+
+        // console.log(document.getElementById("day").innerHTML)
+        // console.log(document.getElementById("day1").innerHTML)
+
+        var text;
+        var week = new Date().getDay();
+
+        switch(week){
+            case 1: //월요일
+            case 2: //화요일
+                text = "HTML5";
+                break;
+            case 3: //수요일
+            case 4: //목요일
+                text="자바스크립트";
+                break;
+            case 5: //금요일
+            case 6: //토요일
+                text="영어";
+                break;
+            case 0: //일요일
+            default:
+                text="수영";
+        }
+
+        document.write("오늘은 <b>"+ text + "</b> 학습하는 날입니다. </p>");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/jquery.bxslider.css">
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{background: #ccc;}
+        .wrap .slide li img{width: 100%;}
+        .wrap .slideli{
+            height: 400px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bx-wrapper {
+            /* -moz-box-shadow: 0 0 5px #ccc;
+            -webkit-box-shadow: 0 0 5px #ccc; */
+            /* box-shadow: -2 0 100px #f00; */
+            border: none;
+            /* background: #fff; */
+        }
+
+        .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+            bottom: 30px;
+        }
+        
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+            position: relative;
+
+        }
+        .wrap .slide .tWrap{
+            position: absolute;
+            top: 50%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="slide">
+            <li style="background-image: url('../images/pc01.jpg')" class="slideli">
+                <div class="tWrap container">
+                    <h3>Lorem, ipsum dolor1.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, earum.</p>
+                </div>
+            </li>
+            <li style="background-image: url('../images/pc02.jpg')" class="slideli">
+                <div class="tWrap container">
+                    <h3>Lorem, ipsum dolor2.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, earum.</p>
+                </div>
+            </li>
+            <li style="background-image: url('../images/pc03.jpg')" class="slideli">
+                <div class="tWrap container">
+                    <h3>Lorem, ipsum dolor3.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, earum.</p>
+                </div>
+            </li>
+        </ul>   
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.bxslider.min.js"></script>
+    <script>
+        $(".slide").bxSlider({
+        });
+    </script>
+</body>
+</html>
