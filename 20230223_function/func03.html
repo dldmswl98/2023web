@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .wrap{
+            width: 1000px;
+            height: 300px;
+            background-color: skyblue;
+            position: relative;
+            margin: 0 auto;
+        }
+        .box1{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;top: 0;
+            background: 100px;
+            background-color: blue;
+        }
+        .box2{
+            width: 700px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: -1000%;bottom: 0;
+            background-color: violet;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1" onmouseover="boxOver('black')" onmouseout="boxOut('violet')">마우스오버</div>
+        <div class="box2">색변화</div>
+    </div>
+
+    <script>
+        const box1Elem = document.getElementsByClassName("box1")[0];
+        const box2Elem = document.getElementsByClassName("box2")[0];
+
+        function boxOver(color){
+            box2Elem.style.background = color;
+            box2Elem.style.left = "0px"
+        }
+        function boxOut(color){
+            box2Elem.style.background = color;
+            box2Elem.style.left = "100px"
+            box2Elem.style.scale = "(50px, 50px)"
+        }
+
+        
+
+    </script>
+</body>
+</html>

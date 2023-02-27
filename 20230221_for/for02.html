@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .clearfix:after{
+            content: ""; display: block; clear: both;
+        }
+
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .img{
+            padding: 50px 0;
+        }
+
+        .imgView{
+            float: left;
+            width: calc((100% - 50px) / 3);
+            margin-right: 25px;
+            border: 1px solid #ddd;
+        }
+
+        .img .imgView:last-child{margin-right: 0px;}
+
+        .imgView img{
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="img container clearfix">
+
+    </div>
+    <script>
+        let sum = 0
+        for(let lee=0; lee<10; lee++){
+            sum = sum + lee
+        }
+        console.log(sum)
+
+        let l = 20;
+        const lee = ["서울", "부산", "대구"];
+        const jonh = {kor:10,eng:30,math:50};
+
+        let text = "";
+        for(let i=0; i<lee.length; i++){
+            text = text + lee[i]
+        }
+        console.log(text);
+
+        const img =[
+            "img1.jpg",
+            "img2.jpg",
+            "img3.jpg",
+        ];
+
+        const txt = [
+            "앵무새",
+            "장미",
+            "거위"
+        ]
+
+        const content = [
+            "Lorem ipsum dolor sit.",
+            "Lorem ipsum dolor sit.",
+            "Lorem ipsum dolor sit."
+        ]
+
+        const obj = [
+            {
+                img:'img1.jpg',
+                title:'앵무새',
+                content:'Lorem ipsum dolor sit.'
+            },
+            {
+                img:'img2.jpg',
+                title:'장미',
+                content:'Lorem ipsum dolor sit.'
+            },
+            {
+                img:'img3.jpg',
+                title:'거위',
+                content:'Lorem ipsum dolor sit.'
+            },
+        ]
+
+        let imgView = "";
+        for(let i=0; i<img.length; i++){
+            imgView += "<div class='imgView'>"
+            imgView += "<img src='../../images/" + img[i] + "'/>"
+            imgView += "<h3>" + txt[i] + "</h3>"
+            imgView += "<p>" + content[i] + "</p>"
+            imgView += "</div>"
+        }
+        console.log(imgView)
+        document.getElementsByClassName("img")[0].innerHTML = imgView;
+
+    </script>
+    
+
+</body>
+</html>
