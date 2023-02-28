@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="city">
+
+    </div>
+    <script>
+        const arr = [];
+        arr[0] = "seoul";
+        arr[1] = "busan";
+        arr[2] = "incheon";
+        arr[3] = "mapo";
+
+        arrSize = arr.length;
+        function printArr(){
+            let txtSum = "";
+            for(let i=0; i<arrSize; i++){
+                txtSum = txtSum + arr[i]
+            }
+            console.log(txtSum);
+            document.querySelector("city").innerHTML = txtSum
+        }
+
+        printArr();
+    </script>
+</body>
+</html>
