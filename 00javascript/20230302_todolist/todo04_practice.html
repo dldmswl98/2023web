@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+    /* font-family: 'Noto Serif KR', serif; */
+        body{
+
+            background-image: url(image/image.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .wrap{
+            background: white;
+            height: 600px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .wrap h1{
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px dotted #ddd ;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .wrap h1 i{
+            font-size: 20px;
+        }
+
+        .inpWrap{
+            padding: 10px 15px;
+        }
+
+        .inpWrap h2{
+            text-align: left;
+            padding: 0 5px;
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .textWrap{
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .textWrap .inp{
+            width: 100%;
+            padding: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding-left: 10px;
+            font-size: 15px;
+
+        }
+
+        .textWrap .btn_input{
+            position: absolute;
+            right: 10px;
+            font-size: 30px;
+        }
+
+        .btn_modi {
+            display: none;
+            position: absolute;
+            right: 10px;
+            font-size: 25px;
+        }
+
+        .listView{
+            width: 350px;
+            margin: 0 auto;
+            margin-top: 10px;
+            height: 100%;
+            border-right: 1px solid #E2E2E2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-size: 10px 10px;
+            background-image:
+                linear-gradient(to right, #E2E2E2 1px, transparent 1px),
+                linear-gradient(to bottom, #E2E2E2 1px, transparent 1px);
+        }
+
+        .listView .btnAllDel{
+            display: flex;
+            justify-content: end;
+            padding: 10px 10px;
+            align-items: center;
+        }
+
+        .listView .btnAllDel p{
+            font-family: 'Playfair Display', serif;
+            margin-left: 3px;
+            cursor: pointer;
+        }
+
+        .listView ul{
+            padding: 30px;
+        }
+
+        .listView li .done{
+            margin-right: 10px;
+        }
+
+        .listView ul li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-family: 'Noto Serif KR', serif;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .listView ul li .icon{
+            margin-left: auto;
+            border-radius: 5px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap:12px;
+            color: b;
+        }
+
+        .item.done{
+            text-decoration:line-through;
+        }
+
+        .listView ul li .icon a{
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <i class="fa-solid fa-trash-can"></i>
+   <i class="fa-sharp fa-solid fa-hammer"></i>
+   <i class="fa-solid fa-square-check"></i> -->
+    <div class="wrap">
+        <h1>TODOLIST <i class="fa-solid fa-thumbtack"></i></h1>
+        <div class="listView">
+            <ul></ul>
+         
+            <i class="fa-regular fa-trash-can btnAllDel" onclick="listAllDell()"><p>All Delete</p></i>
+        </div>
+
+        <div class="inpWrap">
+            <h2>Add to list</h2>
+            <div class="textWrap">
+                <input type="hidden" class="num">
+                <input type="text" class="inp" placeholder="Enter Your To-do">
+                <i class="fa-solid fa-square-plus btn_input"></i>
+                <i class="fa-solid fa-rotate btn_modi"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let listData = [
+            {todo: "자바스크립트1", done: false},
+            {todo: "자바스크립트2", done: false},
+            {todo: "자바스크립트3", done: false},
+        ]
+
+        const inpElem = document.querySelector(".inp");
+        const btnIpElem = document.querySelector(".btn_input");
+        const btnMoElem = document.querySelector(".btn_modi");
+        const listElem = document.querySelector(".listView ul");
+        const numElem = document.querySelector(".num");
+        
+        //입력
+        btnIpElem.addEventListener("click", function(){
+            let value = {"todo": inpElem.value, "done": false};
+
+            if(inpElem.value != ""){
+                listData.push(value);
+                viewData();
+                inpElem.value = "";
+            }else{
+                alert("오늘의 할일을 입력하세요");
+                inpElem.focus();
+            } 
+        });
+
+        //수정
+        btnMoElem.addEventListener("click",function(){
+            listData[numElem.value].todo = inpElem.value;
+            listData[numElem.value].done = false;
+            btnIpElem.style.display = "inline-block";
+            btnMoElem.style.display = "none";
+            inpElem.value = "";
+            viewData();
+
+        })
+        
+
+        function viewData(){
+
+            let viewList = "";
+            listData.forEach(function(item,index){
+                if(item.done == true){
+                    viewList += `<li class = "item done"><a href="javascript:void(0)" onclick="done(${index})" class="done"><i class="fa-solid fa-square-check"></i></a>${item.todo}`
+                }else{
+                    viewList += `<li class = "item"><a href="javascript:void(0)" onclick="done(${index})" class="done"><i class="fa-regular fa-square"></i></a>${item.todo}`
+                }
+
+                viewList += `<div class='icon'>
+                                <a href="javascript:void(0)" onclick="itemDel(${index})"><i class="fa-solid fa-trash-can"></i></a>
+                                <a href="javascript:void(0)" onclick="modi('${item.todo}', ${index})"><i class="fa-sharp fa-solid fa-hammer"></i></a>
+                            </div></li>`
+            })
+
+            listElem.innerHTML = viewList;
+        }
+
+        viewData();
+
+        function itemDel(index){
+            listData.splice(index,1);
+            viewData();
+        }
+
+        function done(index){
+            listData[index].done = !listData[index].done
+            viewData();
+        }
+
+        function modi(todo, index){
+            inpElem.value = todo;
+            numElem.value = index;
+            btnIpElem.style.display = "none";
+            btnMoElem.style.display = "inline-block";
+        }
+
+        function listAllDell() {
+            listData = [];
+            viewData();
+        };
+
+
+
+    </script>
+</body>
+
+</html>
