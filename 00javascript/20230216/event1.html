@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- #1  -->
+    <p onmouseover="this.style.backgroundColor='skyblue'"
+    onmouseout="this.style.backgroundColor='initial'">마우스를 올려주세요</p>
+
+    <!-- #2  -->
+    <p class="box">마우스를 올려주세요</p>
+    <script>
+        // #2 or #2-1
+        let boxElem = document.querySelector("p.box");
+        // boxElem.onmouseover = function(){
+        //     boxElem.style.backgroundColor = "yellow";
+        // }
+
+        // boxElem.onmouseout = function(){
+        //     boxElem.style.backgroundColor = "initial";
+        // }
+
+        // #2-1
+        function mouseover() {
+            boxElem.style.backgroundColor = "yellow";
+            boxElem.style.border = "1px solid #000"
+        }
+        function mouseout() {
+            boxElem.style.backgroundColor = "initial";
+            boxElem.style.border = "initial"
+        }
+
+        boxElem.onmouseover = mouseover;
+        boxElem.onmouseout = mouseout;
+    </script>
+
+    <!-- #3  -->
+    <p class="box1">마우스를 올려주세요</p>
+    <script>
+        const box1Elem = document.querySelector(".box1");
+
+        // #3
+        // box1Elem.addEventListener("mouseover", function(){
+        //     box1Elem.style.width = "100px"; // px을 꼭 넣어주어야 함
+        //     box1Elem.style.background = "skyblue"
+        // });
+
+        // box1Elem.addEventListener("mouseout", function(){
+        //     box1Elem.style.width = "100%"; 
+        //     box1Elem.style.background = "initial"
+        // });
+
+        // #3-1
+        box1Elem.addEventListener("mouseover", mOver);
+        box1Elem.addEventListener("mouseout", mOut);
+
+        function mOver(){
+            box1Elem.style.width = "100px"; // px을 꼭 넣어주어야 함
+            box1Elem.style.background = "skyblue"
+        }
+        function mOut(){
+            box1Elem.style.width = "100%"; // px을 꼭 넣어주어야 함
+            box1Elem.style.background = "initial"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+$width:1000px;
+$mColor:yellow;
+$sColor:pink;
+
+.container{
+    width: $width;
+    margin: 0 auto;
+    display: flex;
+    h1{
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            display: block;
+        }
+    }
+    .nav{
+        margin-left: auto;
+        width: 500px;
+        ul{
+            display: flex;
+            height: 100%;
+            li{
+                flex-grow: 1;
+                a{
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: $mColor;
+                    &:hover{
+                        background: $sColor;
+                    }
+                }
+            }
+        }
+    }
+}
