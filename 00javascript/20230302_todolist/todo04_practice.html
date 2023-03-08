@@ -91,6 +91,7 @@
             margin-top: 10px;
             height: 100%;
             border-right: 1px solid #E2E2E2;
+            border-bottom: 1px solid #E2E2E2;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -189,6 +190,8 @@
 
             if(inpElem.value != ""){
                 listData.push(value);
+                let valueData = JSON.stringify(listData);
+                localStorage.setItem("todoData", valueData);
                 viewData();
                 inpElem.value = "";
             }else{
@@ -204,12 +207,20 @@
             btnIpElem.style.display = "inline-block";
             btnMoElem.style.display = "none";
             inpElem.value = "";
+
+            let valueData = JSON.stringify(listData);
+            localStorage.setItem("todoData", valueData);
+
             viewData();
 
         })
         
 
         function viewData(){
+            if(localStorage.length>0){
+                let localData = localStorage.getItem("todoData");
+                listData = JSON.parse(localData);
+            }
 
             let viewList = "";
             listData.forEach(function(item,index){
@@ -232,11 +243,15 @@
 
         function itemDel(index){
             listData.splice(index,1);
+            let valueData = JSON.stringify(listData);
+            localStorage.setItem("todoData", valueData);
             viewData();
         }
 
         function done(index){
-            listData[index].done = !listData[index].done
+            listData[index].done = !listData[index].done;
+            let valueData = JSON.stringify(listData);
+            localStorage.setItem("todoData", valueData);
             viewData();
         }
 
@@ -245,10 +260,13 @@
             numElem.value = index;
             btnIpElem.style.display = "none";
             btnMoElem.style.display = "inline-block";
+            inpElem.focus();
         }
 
         function listAllDell() {
             listData = [];
+            let valueData = JSON.stringify(listData);
+            localStorage.setItem("todoData", valueData);
             viewData();
         };
 
