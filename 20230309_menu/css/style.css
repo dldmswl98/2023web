@@ -1,0 +1,50 @@
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.sub {
+  display: none;
+}
+
+.gnb {
+  background: #ccc;
+  height: 40px;
+}
+.gnb > ul {
+  height: 100%;
+  display: flex;
+}
+.gnb > ul > li {
+  width: 20%;
+}
+.gnb > ul > li > a {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gnb > ul > li:hover {
+  background-color: skyblue;
+}
+.gnb > ul > li:hover .sub {
+  display: block;
+}
+.gnb > ul > li .sub {
+  background: skyblue;
+  width: 100%;
+}
+.gnb > ul > li .sub li {
+  height: 40px;
+  text-align: center;
+}
+.gnb > ul > li .sub li a {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gnb > ul > li .sub li a:hover {
+  background-color: brown;
+  color: white;
+}/*# sourceMappingURL=style.css.map */
